@@ -219,8 +219,13 @@ void activation_landscape_spread(activation_landscape_t* landscape,
     
     if (!new_activations) return;
     
+    // Validate dimensions match before applying decay
+    size_t n_to_copy = (new_activations->total_size < landscape->n_nodes) 
+                       ? new_activations->total_size 
+                       : landscape->n_nodes;
+    
     // Apply decay
-    for (size_t i = 0; i < landscape->n_nodes && i < new_activations->total_size; i++) {
+    for (size_t i = 0; i < n_to_copy; i++) {
         landscape->activations->data[i] = new_activations->data[i] * decay_factor;
     }
     
@@ -491,6 +496,13 @@ void neural_tensor_print_info(const neural_tensor_t* tensor) {
 float neural_tensor_get(const neural_tensor_t* tensor, const size_t* indices) {
     if (!tensor || !indices || tensor->n_dims == 0) return 0.0f;
     
+    // Validate indices are within bounds
+    for (size_t i = 0; i < tensor->n_dims; i++) {
+        if (indices[i] >= tensor->shape[i]) {
+            return 0.0f; // Index out of bounds
+        }
+    }
+    
     size_t flat_index = 0;
     size_t stride = 1;
     for (size_t i = tensor->n_dims; i > 0; i--) {
@@ -507,6 +519,13 @@ float neural_tensor_get(const neural_tensor_t* tensor, const size_t* indices) {
 
 void neural_tensor_set(neural_tensor_t* tensor, const size_t* indices, float value) {
     if (!tensor || !indices || tensor->n_dims == 0) return;
+    
+    // Validate indices are within bounds
+    for (size_t i = 0; i < tensor->n_dims; i++) {
+        if (indices[i] >= tensor->shape[i]) {
+            return; // Index out of bounds
+        }
+    }
     
     size_t flat_index = 0;
     size_t stride = 1;
