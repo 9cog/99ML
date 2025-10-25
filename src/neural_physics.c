@@ -204,12 +204,23 @@ void activation_landscape_spread(activation_landscape_t* landscape,
                                 float decay_factor) {
     if (!landscape || !connectivity) return;
     
+    // Create temporary 2D tensor for matrix multiplication
+    // Reshape 1D activations to 2D [1, n_nodes]
+    size_t shape_2d[2] = {1, landscape->n_nodes};
+    neural_tensor_t* activations_2d = neural_tensor_create(shape_2d, 2);
+    if (!activations_2d) return;
+    
+    memcpy(activations_2d->data, landscape->activations->data, 
+           landscape->n_nodes * sizeof(float));
+    
     // Spread activation through connectivity matrix
-    neural_tensor_t* new_activations = neural_matmul(landscape->activations, connectivity);
+    neural_tensor_t* new_activations = neural_matmul(activations_2d, connectivity);
+    neural_tensor_free(activations_2d);
+    
     if (!new_activations) return;
     
     // Apply decay
-    for (size_t i = 0; i < landscape->n_nodes; i++) {
+    for (size_t i = 0; i < landscape->n_nodes && i < new_activations->total_size; i++) {
         landscape->activations->data[i] = new_activations->data[i] * decay_factor;
     }
     
@@ -478,13 +489,13 @@ void neural_tensor_print_info(const neural_tensor_t* tensor) {
 }
 
 float neural_tensor_get(const neural_tensor_t* tensor, const size_t* indices) {
-    if (!tensor || !indices) return 0.0f;
+    if (!tensor || !indices || tensor->n_dims == 0) return 0.0f;
     
     size_t flat_index = 0;
     size_t stride = 1;
-    for (int i = tensor->n_dims - 1; i >= 0; i--) {
-        flat_index += indices[i] * stride;
-        stride *= tensor->shape[i];
+    for (size_t i = tensor->n_dims; i > 0; i--) {
+        flat_index += indices[i - 1] * stride;
+        stride *= tensor->shape[i - 1];
     }
     
     if (flat_index < tensor->total_size) {
@@ -495,13 +506,13 @@ float neural_tensor_get(const neural_tensor_t* tensor, const size_t* indices) {
 }
 
 void neural_tensor_set(neural_tensor_t* tensor, const size_t* indices, float value) {
-    if (!tensor || !indices) return;
+    if (!tensor || !indices || tensor->n_dims == 0) return;
     
     size_t flat_index = 0;
     size_t stride = 1;
-    for (int i = tensor->n_dims - 1; i >= 0; i--) {
-        flat_index += indices[i] * stride;
-        stride *= tensor->shape[i];
+    for (size_t i = tensor->n_dims; i > 0; i--) {
+        flat_index += indices[i - 1] * stride;
+        stride *= tensor->shape[i - 1];
     }
     
     if (flat_index < tensor->total_size) {

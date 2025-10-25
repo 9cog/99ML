@@ -43,30 +43,58 @@ char* tensor_to_scheme_list(const neural_tensor_t* tensor) {
     if (!tensor) return NULL;
     
     // Allocate buffer for Scheme representation
-    size_t buffer_size = 1024 + tensor->total_size * 20;
+    size_t buffer_size = 2048 + tensor->total_size * 20;
     char* result = (char*)malloc(buffer_size);
     if (!result) return NULL;
     
-    // Build shape part
-    char shape_str[256];
-    int offset = sprintf(shape_str, "(shape");
-    for (size_t i = 0; i < tensor->n_dims; i++) {
-        offset += sprintf(shape_str + offset, " %zu", tensor->shape[i]);
+    // Build shape part with bounds checking
+    char shape_str[512];
+    int offset = snprintf(shape_str, sizeof(shape_str), "(shape");
+    if (offset < 0 || (size_t)offset >= sizeof(shape_str)) {
+        free(result);
+        return NULL;
     }
-    sprintf(shape_str + offset, ")");
     
-    // Build data part
-    char data_str[1024];
-    offset = sprintf(data_str, "(data");
+    for (size_t i = 0; i < tensor->n_dims && offset < (int)sizeof(shape_str) - 20; i++) {
+        int written = snprintf(shape_str + offset, sizeof(shape_str) - offset, " %zu", tensor->shape[i]);
+        if (written < 0) break;
+        offset += written;
+    }
+    
+    if (offset < (int)sizeof(shape_str) - 2) {
+        snprintf(shape_str + offset, sizeof(shape_str) - offset, ")");
+    }
+    
+    // Build data part with bounds checking
+    size_t data_buffer_size = 2048;
+    char* data_str = (char*)malloc(data_buffer_size);
+    if (!data_str) {
+        free(result);
+        return NULL;
+    }
+    
+    offset = snprintf(data_str, data_buffer_size, "(data");
+    if (offset < 0 || (size_t)offset >= data_buffer_size) {
+        free(data_str);
+        free(result);
+        return NULL;
+    }
+    
     size_t n_print = (tensor->total_size < 100) ? tensor->total_size : 100;
-    for (size_t i = 0; i < n_print; i++) {
-        offset += sprintf(data_str + offset, " %.4f", tensor->data[i]);
+    for (size_t i = 0; i < n_print && offset < (int)data_buffer_size - 30; i++) {
+        int written = snprintf(data_str + offset, data_buffer_size - offset, " %.4f", tensor->data[i]);
+        if (written < 0) break;
+        offset += written;
     }
-    sprintf(data_str + offset, ")");
     
-    // Combine
-    sprintf(result, "(tensor %s %s)", shape_str, data_str);
+    if (offset < (int)data_buffer_size - 2) {
+        snprintf(data_str + offset, data_buffer_size - offset, ")");
+    }
     
+    // Combine with bounds checking
+    snprintf(result, buffer_size, "(tensor %s %s)", shape_str, data_str);
+    
+    free(data_str);
     return result;
 }
 
@@ -157,14 +185,30 @@ char* scheme_get_active_concepts(cognitive_context_t* context) {
     
     if (!active_nodes) return strdup("()");
     
-    // Build Scheme list
-    char* result = (char*)malloc(1024);
-    int offset = sprintf(result, "(active-concepts");
-    
-    for (size_t i = 0; i < n_active && offset < 1000; i++) {
-        offset += sprintf(result + offset, " %zu", active_nodes[i]);
+    // Build Scheme list with proper bounds checking
+    size_t result_size = 1024;
+    char* result = (char*)malloc(result_size);
+    if (!result) {
+        free(active_nodes);
+        return NULL;
     }
-    sprintf(result + offset, ")");
+    
+    int offset = snprintf(result, result_size, "(active-concepts");
+    if (offset < 0 || (size_t)offset >= result_size) {
+        free(result);
+        free(active_nodes);
+        return NULL;
+    }
+    
+    for (size_t i = 0; i < n_active && (size_t)offset < result_size - 30; i++) {
+        int written = snprintf(result + offset, result_size - offset, " %zu", active_nodes[i]);
+        if (written < 0) break;
+        offset += written;
+    }
+    
+    if ((size_t)offset < result_size - 2) {
+        snprintf(result + offset, result_size - offset, ")");
+    }
     
     free(active_nodes);
     return result;
