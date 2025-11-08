@@ -16,6 +16,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 set(NEURAL_PHYSICS_SOURCES
     src/neural_physics.c
     src/scheme_neural_bridge.c
+    src/third_order_cybernetics.c
 )
 
 # Create library
@@ -31,14 +32,21 @@ add_executable(neural_symbolic_demo
 
 target_link_libraries(neural_symbolic_demo neural_physics)
 
+# Third-order cybernetics demo
+add_executable(third_order_cybernetics_demo
+    examples/third_order_cybernetics_demo.c
+)
+
+target_link_libraries(third_order_cybernetics_demo neural_physics)
+
 # Installation
-install(TARGETS neural_physics neural_symbolic_demo
+install(TARGETS neural_physics neural_symbolic_demo third_order_cybernetics_demo
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
 )
 
-install(FILES include/neural_physics.h
+install(FILES include/neural_physics.h include/third_order_cybernetics.h
     DESTINATION include
 )
 
