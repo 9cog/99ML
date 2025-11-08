@@ -68,6 +68,14 @@ Provides the theoretical and computational foundation based on Eric Schwarz's ho
 - Stabilizing: Vortices (1), Homeostasis (3), Self-Reference (5)
 - Creative: Morphogenesis (2), Autopoiesis (4), Autogenesis (6)
 
+**Autognosis Integration** (Winiwarter's Theory):
+- Hierarchical self-image building in the existential plane
+- Bottom-up integration: Local images of global context
+- Top-down differentiation: Global images of local ensemble
+- Self-reference degree measures consciousness level
+- Operational closure achieves autonomous self-knowledge
+- See `.github/agents/AUTOGNOSIS.md` for complete theory
+
 **Spiral of Self-Organization**:
 - Seven phases from entropic drift to autonomy
 - Tracks system evolution and emergence
@@ -169,6 +177,9 @@ make
 
 # Run third-order cybernetics demo
 ./third_order_cybernetics_demo
+
+# Run autognosis integration test
+./autognosis_test
 ```
 
 ## Running Examples
@@ -197,6 +208,20 @@ Demonstrates:
 - Twelve leverage points for intervention
 - Self-organization process emergence
 - System state export to symbolic format
+- **Autognosis metrics**: self-reference degree, image convergence, operational closure
+
+### Autognosis Integration Test
+```bash
+./build/autognosis_test
+```
+
+Demonstrates:
+- Hierarchical self-image building in existential plane
+- Bottom-up integration (local → global)
+- Top-down differentiation (global → local)
+- Recursive self-reference and consciousness emergence
+- Operational closure achievement
+- Organizational isomorphism validation
 
 ### Scheme Demo
 ```bash
