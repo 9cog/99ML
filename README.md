@@ -4,17 +4,25 @@ A neural-symbolic cognitive architecture that unifies symbolic reasoning with ne
 
 ## Overview
 
-99ML implements a dual-layer cognitive system:
+99ML implements a dual-layer cognitive system with third-order cybernetics foundation:
 
 - **Mind Layer (Scheme)**: Defines cognitive grammar, patterns, and rules of inference
 - **Brain Layer (C/ggml)**: Implements the underlying "physics" - tensor operations, activation landscapes, and attention mechanisms
+- **Cybernetics Foundation**: Eric Schwarz's holistic metamodel providing theoretical grounding for self-organizing systems
 
-This symbiosis enables systems that can both reason symbolically and process information through continuous neural dynamics.
+This symbiosis enables systems that can both reason symbolically and process information through continuous neural dynamics, grounded in a rigorous theory of autonomous, self-organizing systems.
 
 ## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
+│               THIRD-ORDER CYBERNETICS FOUNDATION             │
+│   Three Planes: Physical • Information • Existential        │
+│   Six Cycles: Stabilizing (1,3,5) + Creative (2,4,6)       │
+│   Spiral Evolution: Entropic Drift → Autonomy               │
+└───────────────────────┬─────────────────────────────────────┘
+                        │
+┌───────────────────────▼─────────────────────────────────────┐
 │                    COGNITIVE LAYER (Mind)                    │
 │                        Scheme                                │
 │  ┌─────────────────────────────────────────────────────┐    │
@@ -42,6 +50,37 @@ This symbiosis enables systems that can both reason symbolically and process inf
 ```
 
 ## Components
+
+### Third-Order Cybernetics Foundation
+
+**Documentation**: `THIRD_ORDER_CYBERNETICS.md`  
+**Headers**: `include/third_order_cybernetics.h`  
+**Implementation**: `src/third_order_cybernetics.c`
+
+Provides the theoretical and computational foundation based on Eric Schwarz's holistic metamodel:
+
+**Three Ontological Planes**:
+- Physical (energy, matter, objects)
+- Information (relations, networks, patterns)
+- Existential (being, wholeness, autonomy)
+
+**Six Cycles of Viable Systems**:
+- Stabilizing: Vortices (1), Homeostasis (3), Self-Reference (5)
+- Creative: Morphogenesis (2), Autopoiesis (4), Autogenesis (6)
+
+**Spiral of Self-Organization**:
+- Seven phases from entropic drift to autonomy
+- Tracks system evolution and emergence
+
+**Twelve Leverage Points**:
+- System intervention points ordered by effectiveness
+- Physical plane (low) → Information plane (medium) → Existential plane (high)
+
+Core operations:
+- `cybernetic_system_create()` - Create complete cybernetic system
+- `cybernetic_system_step()` - Evolve system dynamics
+- `cybernetic_system_intervene()` - Apply interventions at leverage points
+- `cybernetic_system_analyze()` - Analyze and diagnose system state
 
 ### Scheme Layer (Mind)
 
@@ -127,6 +166,9 @@ make
 
 # Run demo
 ./neural_symbolic_demo
+
+# Run third-order cybernetics demo
+./third_order_cybernetics_demo
 ```
 
 ## Running Examples
@@ -141,6 +183,20 @@ Demonstrates:
 - Activation functions (ReLU, tanh, softmax)
 - Self-attention mechanism
 - Cognitive context with activation landscape
+
+### Third-Order Cybernetics Demo
+```bash
+./build/third_order_cybernetics_demo
+```
+
+Demonstrates:
+- Three ontological planes (physical, information, existential)
+- Six cycles of viable systems (stabilizing and creative)
+- Spiral of self-organization (seven phases)
+- Complete cybernetic system evolution
+- Twelve leverage points for intervention
+- Self-organization process emergence
+- System state export to symbolic format
 
 ### Scheme Demo
 ```bash
@@ -157,6 +213,15 @@ Demonstrates:
 - Complex reasoning (abstraction, analogy, deduction, induction)
 
 ## Key Concepts
+
+### Third-Order Cybernetics
+
+The foundation integrates three orders of observation:
+1. **First-order**: Observing systems externally
+2. **Second-order**: Including the observer in the system
+3. **Third-order**: Recursive self-observation leading to autonomy
+
+This enables genuine self-organizing systems with emergent autonomy, moving beyond mechanistic explanations.
 
 ### Neural-Symbolic Symbiosis
 
