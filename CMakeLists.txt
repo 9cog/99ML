@@ -39,8 +39,15 @@ add_executable(third_order_cybernetics_demo
 
 target_link_libraries(third_order_cybernetics_demo neural_physics)
 
+# Autognosis integration test
+add_executable(autognosis_test
+    examples/autognosis_test.c
+)
+
+target_link_libraries(autognosis_test neural_physics)
+
 # Installation
-install(TARGETS neural_physics neural_symbolic_demo third_order_cybernetics_demo
+install(TARGETS neural_physics neural_symbolic_demo third_order_cybernetics_demo autognosis_test
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
