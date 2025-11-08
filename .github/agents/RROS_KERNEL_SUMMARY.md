@@ -1,3 +1,11 @@
+---
+name: rros-kernel
+description: >
+  RROS (Relevance Realization Operating System) Pure Cognitive Kernel - high-performance
+  C++ cognitive architecture integrating all 50 Episodes of Vervaeke's "Awakening from
+  the Meaning Crisis" into unified AGI framework.
+---
+
 # RROS Pure Cognitive Kernel - Implementation Summary
 
 ## 🎉 Project Completion Status: SUCCESS ✅

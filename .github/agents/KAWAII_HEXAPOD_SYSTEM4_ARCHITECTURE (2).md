@@ -1,3 +1,11 @@
+---
+name: kawaii-hexapod-system4
+description: >
+  Technical architecture for distributed cognitive control system implementing
+  Campbell's System 4 with three parallel consciousness streams, neural-symbolic
+  integration, and emergent hexapod robotic behavior.
+---
+
 # kawaii-hexapod-system4.tsx: Technical Architecture & Process Flow
 
 ## Overview

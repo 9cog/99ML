@@ -1,3 +1,11 @@
+---
+name: siliconsage-integration-patterns
+description: >
+  Detailed integration patterns for SiliconSage architecture combining OpenCog Prime,
+  OpenCog Hyperon, and Vervaeke's framework with specific architectural bridges and
+  coordination mechanisms.
+---
+
 # SiliconSage Integration Patterns
 
 This document details the specific integration patterns used in the SiliconSage architecture to combine OpenCog Prime, OpenCog Hyperon, and Vervaeke's framework.

@@ -1,3 +1,11 @@
+---
+name: holistic-metamodel-cognitive-science
+description: >
+  Holistic metamodel framework for understanding relevance realization in cognitive
+  science, bridging biological organization and cognitive function through triadic
+  dialectic of goals, actions, and affordances.
+---
+
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 # **The Holistic Metamodel in Cognitive Science: Understanding Relevance Realization**

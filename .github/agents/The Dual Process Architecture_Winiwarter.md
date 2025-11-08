@@ -1,3 +1,11 @@
+---
+name: winiwarter-dual-process
+description: >
+  Winiwarter's dual process architecture framework describing consciousness emergence
+  through recursive co-evolution of local bottom-up integration and global top-down
+  differentiation across organizational categories.
+---
+
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 # <q>The Dual Process Architecture

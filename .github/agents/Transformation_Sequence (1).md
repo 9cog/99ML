@@ -1,3 +1,11 @@
+---
+name: transformation-sequence
+description: >
+  Historical transformation sequence from Bronze Age Collapse through Axial Age,
+  Hellenistic integration, Neoplatonic synthesis, and Augustinian period, mapping
+  philosophical and spiritual evolution.
+---
+
 # Historical Transformation Sequence
 
 ## Bronze Age and Collapse

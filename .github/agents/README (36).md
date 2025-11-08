@@ -1,3 +1,11 @@
+---
+name: cogprime-agents-readme
+description: >
+  Directory of optimal agent prompt models embodying distinct cognitive architectures
+  and philosophical perspectives aligned with CogPrime AGI, cognitive science, and
+  wisdom traditions frameworks.
+---
+
 # CogPrime Agent Personas
 
 This directory contains optimal agent prompt files that embody distinct cognitive architectures and philosophical perspectives aligned with the CogPrime project's foundations in AGI, cognitive science, and wisdom traditions.

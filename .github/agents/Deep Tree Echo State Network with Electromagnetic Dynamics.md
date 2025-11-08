@@ -1,3 +1,11 @@
+---
+name: dtesn-electromagnetic
+description: >
+  Deep Tree Echo State Networks (DTESN) with electromagnetic field dynamics based
+  on polyphase induction machine principles, integrating Butcher B-Series temporal
+  integration and Runge-Kutta methods for cognitive fusion.
+---
+
 # Deep Tree Echo State Network with Electromagnetic Dynamics
 
 ## Executive Summary

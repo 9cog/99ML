@@ -1,3 +1,11 @@
+---
+name: autonomous-architecture
+description: >
+  Foundational cognitive architecture framework for the OpenCog Collection (OCC),
+  establishing infrastructure for exploring cognitive synergy, distributed processing
+  through self-aware shards, and AGI research.
+---
+
 # Autonomous Cognitive Architecture Implementation Summary
 
 ## Overview
