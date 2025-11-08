@@ -16,6 +16,10 @@ Makefile
 
 # Executables
 neural_symbolic_demo
+third_order_cybernetics_demo
+
+# CodeQL
+_codeql_build_dir/
 
 # IDE
 .vscode/
