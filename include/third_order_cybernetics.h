@@ -52,12 +52,20 @@ typedef struct {
 /**
  * Existential Plane - Being, emerging wholeness
  * The plane of autonomy, self-reference, and emergent identity
+ * Enhanced with autognostic (hierarchical self-image building) processes
  */
 typedef struct {
     neural_tensor_t* self_model;        // System's model of itself
     neural_tensor_t* identity_state;    // Emergent identity
     float autonomy_level;               // Degree of autonomy
     bool self_aware;                    // Self-awareness flag
+    
+    // Autognosis: Hierarchical self-image building
+    neural_tensor_t* local_image;       // Local image of global context (bottom-up)
+    neural_tensor_t* global_image;      // Global image of local ensemble (top-down)
+    float self_reference_degree;        // Degree of self-reference (consciousness level)
+    float image_convergence;            // Convergence between object and image
+    bool operational_closure;           // System is its own reference
 } existential_plane_t;
 
 // ============================================================================
