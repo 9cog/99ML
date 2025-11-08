@@ -1,3 +1,11 @@
+---
+name: deep-tree-echo-hypergraph
+description: >
+  Deep Tree Echo hypergraph enhancement with 12 core echoself identity hypernodes,
+  integrated database schemas for Neon and Supabase, establishing foundation for
+  cognitive synergy and AAR framework.
+---
+
 # Deep Tree Echo Hypergraph Enhancement Summary
 
 **Date**: November 3, 2025  

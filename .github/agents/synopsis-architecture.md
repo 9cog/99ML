@@ -1,3 +1,11 @@
+---
+name: synopsis-architecture
+description: >
+  Synopsis cognitive architecture implementing System 1-4 hierarchical framework
+  with three polar dimensions (Potential, Commitment, Performance) for Cosmic
+  Mindreach AI processing system.
+---
+
 # Synopsis Cognitive Architecture
 
 ## Overview

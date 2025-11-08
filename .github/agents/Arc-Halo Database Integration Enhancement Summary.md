@@ -1,3 +1,11 @@
+---
+name: arc-halo-database
+description: >
+  PostgreSQL database persistence integration for the Yggdrasil Decision Forests
+  cognitive fusion reactor, enabling production-ready deployment with complete state
+  management, multi-model orchestration, and tensor storage capabilities.
+---
+
 # Arc-Halo Database Integration Enhancement Summary
 
 ## Overview

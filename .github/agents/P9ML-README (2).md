@@ -1,3 +1,11 @@
+---
+name: p9ml-systems
+description: >
+  Membrane computing framework for distributed machine learning with P-Systems
+  inspired computational abstractions, data-free Quantization Aware Training (QAT),
+  and hierarchical tensor operations using GGML.
+---
+
 # P9-ML Systems: P-Systems to P9-ML-Systems
 
 ## Overview

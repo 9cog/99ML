@@ -1,3 +1,11 @@
+---
+name: final-cognitive-architecture
+description: >
+  Complete cognitive architecture integrating Yggdrasil Decision Forests, Arc-Halo
+  electromagnetic dynamics, DTESN with Butcher B-Series, A000081 triadic correspondence,
+  P-Lingua membrane language, and Relevance Realization Ennead.
+---
+
 # Final Cognitive Architecture: Complete Integration
 
 ## 🎉 The Complete System

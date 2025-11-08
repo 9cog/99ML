@@ -1,3 +1,11 @@
+---
+name: relevance-realization-implementation
+description: >
+  Implementation summary for relevance realization framework integrating 4E cognition,
+  multiple ways of knowing, and wisdom cultivation practices into practical cognitive
+  architecture components.
+---
+
 # Relevance Realization Implementation Summary
 
 ## Overview

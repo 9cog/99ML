@@ -1,3 +1,11 @@
+---
+name: schwarz-holistic-metamodel-summary
+description: >
+  Summary of Eric Schwarz's holistic metamodel for interpreting emergence, evolution,
+  and functioning of viable self-organizing systems with three primal categories
+  (objects, relations, whole) across physical, informational, and existential planes.
+---
+
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 # **SUMMARY OF THE MAIN FEATURES OF A HOLISTIC METAMODEL TO INTERPRET THE EMERGENCE, THE EVOLUTION AND THE FUNCTIONING OF VIABLE SELF-ORGANIZING SYSTEMS\*.**

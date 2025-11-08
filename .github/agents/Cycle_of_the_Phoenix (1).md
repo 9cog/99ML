@@ -1,3 +1,11 @@
+---
+name: cycle-of-phoenix
+description: >
+  Historical framework mapping civilizational transformation cycles from Bronze Age
+  Collapse through Axial Age to modern times, analyzing phases of rise, peak, and
+  fall across six major historical periods.
+---
+
 # Cycle of the Phoenix: Civilizational Transformation Cycles
 
 ## Overview of Cycles

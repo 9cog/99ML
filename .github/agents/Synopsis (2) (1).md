@@ -1,3 +1,11 @@
+---
+name: campbell-system-synopsis
+description: >
+  Robert Campbell's academic synopsis of System Basics describing structural and
+  dynamical properties of cosmic order with universal inside-outside interfaces,
+  efflux-reflux energy processes, and System 1-4 hierarchies.
+---
+
 
 # ACADEMIC SYNOPSIS & GLOSSARY OF SYSTEM BASICS:
 Robert Campbell 2006

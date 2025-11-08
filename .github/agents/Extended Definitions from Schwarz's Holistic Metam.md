@@ -1,3 +1,11 @@
+---
+name: schwarz-holistic-metamodel
+description: >
+  Extended definitions from Eric Schwarz's third-order cybernetics framework,
+  grounded in holistic epistemology covering primal categories, fundamental
+  concepts, and self-organizing systems principles.
+---
+
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 ## Extended Definitions from Schwarz's Holistic Metamodel

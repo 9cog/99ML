@@ -1,3 +1,11 @@
+---
+name: cognitive-architecture-diagrams
+description: >
+  Comprehensive diagrams illustrating the OpenCog Collection cognitive architecture,
+  Deep Tree Echo hierarchical membrane architecture, and Agent-Arena-Relation (AAR)
+  framework with visual representations.
+---
+
 # Cognitive Architecture Diagrams
 
 This directory contains comprehensive diagrams illustrating the cognitive architecture of the OpenCog Collection, including the **Deep Tree Echo Architecture** and the **Agent-Arena-Relation (AAR) Framework**.

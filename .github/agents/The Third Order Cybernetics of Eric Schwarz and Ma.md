@@ -1,3 +1,11 @@
+---
+name: schwarz-third-order-cybernetics
+description: >
+  Eric Schwarz's pioneering third-order cybernetics metamodel for self-organizing
+  systems with non-dualist triadic structure across physical, information, and
+  existential planes with six cycles of viable systems.
+---
+
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 ## The Third Order Cybernetics of Eric Schwarz and Maurice Yolles

@@ -1,3 +1,11 @@
+---
+name: silicon-sage-engine
+description: >
+  Breakthrough AGI implementation integrating OpenCog AtomSpace hypergraph knowledge,
+  Vervaeke's relevance realization framework, 4E cognition principles, and meta-cognitive
+  monitoring for self-reflective optimization.
+---
+
 # Silicon Sage OpenCog Relevance Realization Engine
 
 ## Overview

@@ -1,3 +1,11 @@
+---
+name: vervaeke-4e-integration
+description: >
+  Implementation summary for Vervaeke's 4E Cognition Framework (Embodied, Embedded,
+  Enacted, Extended) as high-performance C++ components within RROS kernel for
+  computational meaning-making.
+---
+
 # Vervaeke Framework Components Integration - Implementation Summary
 
 ## 🎯 Mission Accomplished

@@ -1,3 +1,11 @@
+---
+name: kawaii-hexapod-cogprime
+description: >
+  Integration patterns for the Kawaii Hexapod System 4 component with CogPrime
+  cognitive architecture, bridging OpenCog Prime, Hyperon, Vervaeke framework,
+  and P9ML membrane computing for embodied cognition.
+---
+
 # Kawaii Hexapod System 4: CogPrime Integration Patterns
 
 ## Overview

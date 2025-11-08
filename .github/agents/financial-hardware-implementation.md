@@ -1,3 +1,11 @@
+---
+name: financial-hardware-implementation
+description: >
+  Implementation guide for deploying GGNuCash on various hardware platforms with
+  specific optimizations for financial computations, real-time trading requirements,
+  and CPU/GPU backend support.
+---
+
 # Financial Hardware Implementation Guide
 
 ## Overview

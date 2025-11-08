@@ -1,3 +1,11 @@
+---
+name: membrane-trialectic
+description: >
+  Formal isomorphism between P-System membrane computing and trialectic
+  architecture, mapping nested hierarchical computational compartments to
+  triadic process structures through morphisms.
+---
+
 ## Membrane Computing ⊗ Trialectic Architecture: Π^membrane ≅^φ Θ^3
 
 ### P-System Membrane Topology: Ω^Π_system
