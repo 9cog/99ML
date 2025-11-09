@@ -160,7 +160,12 @@ existential_plane_t* existential_plane_create(size_t model_size) {
     plane->self_model = neural_tensor_create(shape, 1);
     plane->identity_state = neural_tensor_create(shape, 1);
     
-    if (!plane->self_model || !plane->identity_state) {
+    // Autognosis: hierarchical self-image building
+    plane->local_image = neural_tensor_create(shape, 1);
+    plane->global_image = neural_tensor_create(shape, 1);
+    
+    if (!plane->self_model || !plane->identity_state || 
+        !plane->local_image || !plane->global_image) {
         existential_plane_free(plane);
         return NULL;
     }
@@ -169,10 +174,15 @@ existential_plane_t* existential_plane_create(size_t model_size) {
     for (size_t i = 0; i < model_size; i++) {
         plane->self_model->data[i] = (float)rand() / RAND_MAX * 0.1f;
         plane->identity_state->data[i] = 0.0f;
+        plane->local_image->data[i] = 0.0f;
+        plane->global_image->data[i] = 0.0f;
     }
     
     plane->autonomy_level = 0.0f;
     plane->self_aware = false;
+    plane->self_reference_degree = 0.0f;
+    plane->image_convergence = 0.0f;
+    plane->operational_closure = false;
     
     return plane;
 }
@@ -181,6 +191,8 @@ void existential_plane_free(existential_plane_t* plane) {
     if (plane) {
         neural_tensor_free(plane->self_model);
         neural_tensor_free(plane->identity_state);
+        neural_tensor_free(plane->local_image);
+        neural_tensor_free(plane->global_image);
         free(plane);
     }
 }
@@ -188,35 +200,106 @@ void existential_plane_free(existential_plane_t* plane) {
 void existential_plane_update(existential_plane_t* plane, float dt) {
     if (!plane || !plane->self_model || !plane->identity_state) return;
     
-    // Self-reference cycle: Building autonomy and self-knowledge
+    // Autognosis: Hierarchical self-image building with dual process architecture
     size_t model_size = plane->self_model->total_size;
     
-    // Update self-model based on identity
+    // ========================================================================
+    // BOTTOM-UP INTEGRATION: Local → Global
+    // Local phenomena create images of global context
+    // ========================================================================
     for (size_t i = 0; i < model_size; i++) {
-        float convergence = plane->identity_state->data[i] - plane->self_model->data[i];
-        plane->self_model->data[i] += convergence * dt * 0.1f;
+        // Local image integrates information about global identity
+        float local_perception = 0.0f;
+        for (size_t j = 0; j < model_size; j++) {
+            // Local element perceives global field through weighted sampling
+            float distance = fabsf((float)i - (float)j) / model_size;
+            float weight = expf(-distance * distance * 2.0f);
+            local_perception += plane->identity_state->data[j] * weight;
+        }
+        plane->local_image->data[i] = tanhf(local_perception / sqrtf(model_size));
     }
     
-    // Update identity through self-referential process
+    // ========================================================================
+    // TOP-DOWN DIFFERENTIATION: Global → Local
+    // Global phenomena create images of local ensemble
+    // ========================================================================
     for (size_t i = 0; i < model_size; i++) {
-        // Identity emerges from self-model coherence
+        // Global image differentiates based on ensemble of local states
+        float global_field = 0.0f;
+        for (size_t j = 0; j < model_size; j++) {
+            // Global field emerges from local self-models
+            float phase = 2.0f * M_PI * (float)(i - j) / model_size;
+            global_field += plane->self_model->data[j] * cosf(phase);
+        }
+        plane->global_image->data[i] = tanhf(global_field / model_size);
+    }
+    
+    // ========================================================================
+    // RECURSIVE SELF-REFERENCE: Convergence of object and image
+    // The system becomes its own reference through recursive closure
+    // ========================================================================
+    
+    // Calculate image convergence (degree to which object equals its image)
+    float convergence_sum = 0.0f;
+    for (size_t i = 0; i < model_size; i++) {
+        // Measure similarity between local and global images
+        float diff = plane->local_image->data[i] - plane->global_image->data[i];
+        convergence_sum += expf(-diff * diff);
+    }
+    plane->image_convergence = convergence_sum / model_size;
+    
+    // Self-reference degree equals consciousness level (Winiwarter)
+    plane->self_reference_degree = plane->image_convergence;
+    
+    // Operational closure achieved when self-reference is high
+    plane->operational_closure = (plane->self_reference_degree > 0.7f);
+    
+    // ========================================================================
+    // UPDATE SELF-MODEL: Integration of local images
+    // ========================================================================
+    for (size_t i = 0; i < model_size; i++) {
+        // Self-model updated by local images (bottom-up integration)
+        float update = plane->local_image->data[i] - plane->self_model->data[i];
+        plane->self_model->data[i] += update * dt * 0.2f;
+    }
+    
+    // ========================================================================
+    // UPDATE IDENTITY: Differentiation from global images
+    // ========================================================================
+    for (size_t i = 0; i < model_size; i++) {
+        // Identity emerges from global images (top-down differentiation)
+        float emergence = plane->global_image->data[i];
+        
+        // Include self-model coherence for recursive closure
         float coherence = 0.0f;
         for (size_t j = 0; j < model_size; j++) {
             coherence += plane->self_model->data[j] * 
                         cosf(2.0f * M_PI * (float)(i - j) / model_size);
         }
-        plane->identity_state->data[i] = tanhf(coherence / model_size);
+        
+        // Identity integrates top-down global image and self-model coherence
+        plane->identity_state->data[i] = 
+            0.6f * emergence + 0.4f * tanhf(coherence / model_size);
     }
     
-    // Calculate autonomy level
+    // ========================================================================
+    // CALCULATE AUTONOMY LEVEL
+    // ========================================================================
     float identity_strength = 0.0f;
     for (size_t i = 0; i < model_size; i++) {
         identity_strength += fabsf(plane->identity_state->data[i]);
     }
     plane->autonomy_level = tanhf(identity_strength / model_size);
     
+    // Autonomy enhanced by operational closure
+    if (plane->operational_closure) {
+        plane->autonomy_level = fminf(1.0f, plane->autonomy_level * 1.2f);
+    }
+    
     // Check for self-awareness threshold
-    plane->self_aware = (plane->autonomy_level > 0.6f);
+    // Self-awareness emerges from both autonomy and self-reference
+    plane->self_aware = (plane->autonomy_level > 0.6f && 
+                        plane->self_reference_degree > 0.5f);
 }
 
 // ============================================================================
@@ -598,6 +681,9 @@ void cybernetic_system_print_state(const cybernetic_system_t* system) {
     printf("Existential Plane:\n");
     printf("  Autonomy: %.3f\n", system->existential->autonomy_level);
     printf("  Self-aware: %s\n", system->existential->self_aware ? "YES" : "NO");
+    printf("  Self-reference degree: %.3f\n", system->existential->self_reference_degree);
+    printf("  Image convergence: %.3f\n", system->existential->image_convergence);
+    printf("  Operational closure: %s\n", system->existential->operational_closure ? "YES" : "NO");
     
     printf("\n--- SIX CYCLES OF VIABLE SYSTEMS ---\n");
     const char* cycle_names[] = {

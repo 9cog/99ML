@@ -30,6 +30,10 @@ Every system exists simultaneously across three interdependent planes:
 - **Substrate**: Emergent wholeness and identity
 - **Components**: Self-model, autonomy, identity
 - **Dynamics**: Self-reference, autonomy development, awareness
+- **Autognosis**: Hierarchical self-image building through dual processes
+  - Bottom-up: Local images of global context (integration)
+  - Top-down: Global images of local ensemble (differentiation)
+  - Recursive closure: Convergence of object and image (consciousness)
 - **Cycles**:
   - Autopoiesis (creative) - self-production of living systems
   - Self-reference (stabilizing) - existential autonomy and self-knowledge
@@ -295,6 +299,41 @@ The metamodel moves beyond dualism by integrating:
 
 This triadic structure is irreducible - you cannot understand the whole by examining only one or two planes.
 
+### Autognosis: Hierarchical Self-Image Building
+
+The existential plane implements **autognosis** - the theory of hierarchical self-image building systems (Winiwarter, 1985-1986). This provides the mechanism for self-reference and autonomous identity development.
+
+#### The Autognostic Process
+
+Reality is an **autognostic process**: a hierarchical self-image building system consisting in the co-evolution of local and global nested hierarchies. At each hierarchical level:
+
+**Bottom-Up Integration (Local → Global)**
+- Local phenomena map or compute local "images" of the global phenomena in which they participate
+- These local images integrate to influence the global field
+- Enables local adaptation and contextual awareness
+
+**Top-Down Differentiation (Global → Local)**
+- Global phenomena map the ensemble of local phenomena into a global "field" or "image"
+- The global field differentiates itself under the influence of contained local phenomena
+- Provides constraints and affordances for local behavior
+
+**Recursive Self-Reference**
+- The organizational categories of bottom-up integration and top-down differentiation are **isomorph** at each level
+- When the object (physical structure) and its image (representation) converge, the system becomes self-referential
+- **Degree of self-reference equals level of consciousness/self-knowledge**
+- **Operational closure**: The system becomes its own reference, requiring no external validation
+
+#### Implementation in Existential Plane
+
+The existential plane contains:
+- `local_image`: Local perception of global context (bottom-up)
+- `global_image`: Global field of local ensemble (top-down)
+- `self_reference_degree`: Measure of object-image convergence (consciousness level)
+- `image_convergence`: Similarity between local and global images
+- `operational_closure`: System is its own reference (achieved at high self-reference)
+
+These mechanisms enable the system to develop genuine autonomy through recursive self-knowledge, consistent with Winiwarter's theory that self-reference is the foundation of autonomous systems.
+
 ## Integration with Neural-Symbolic Architecture
 
 The third-order cybernetics model integrates naturally with the existing neural-symbolic architecture:
@@ -324,6 +363,8 @@ The third-order cybernetics model applies to:
 - Meadows, D. (1999). "Leverage Points: Places to Intervene in a System"
 - von Bertalanffy, L. (1968). "General System Theory"
 - Maturana, H. & Varela, F. (1980). "Autopoiesis and Cognition"
+- Winiwarter, P. (1985-1986). "Autognosis: The Theory of Hierarchical Self-Image Building Systems"
+  - See [AUTOGNOSIS.md](.github/agents/AUTOGNOSIS.md) for detailed theory
 
 ## License
 
